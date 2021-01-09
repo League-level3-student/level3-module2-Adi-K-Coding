@@ -24,12 +24,13 @@ public class SelectionSorter extends Sorter {
 				if (array[j] < array[index]) {
 					index = j;
 				}
-				// 5. swap the array element at index with the array element at i
-
 			}
-			array[index] = array[i];
+			// 5. swap the array element at index with the array element at i
+			int temp = array[i];
+			array[i] = array[index];
+			array[index] = temp;
 			display.updateDisplay();
-		}
 
+		}
 	}
 }
