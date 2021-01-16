@@ -25,7 +25,7 @@ public class _02_InterpolationSearch {
 			// then check if the array element at start is equal to the value
 			// and return start if it is, otherwise return -1.
 			if (start == end) {
-				if (array[start] == value) {// CHECK THIS LINE
+				if (array[start] == value) {
 					return start;
 				} else {
 					return -1;
@@ -40,7 +40,7 @@ public class _02_InterpolationSearch {
 			int position = start + (((end - start) * (value - array[start])) / (array[end] - array[start]));
 			// 6. if the array element at position is equal to the value,
 			// then we found it and can return position.
-			if (array[position] == value) {// CHECK THIS
+			if (array[position] == value) {
 				return position;
 			}
 			// 7. if the array element at position is less than value,
