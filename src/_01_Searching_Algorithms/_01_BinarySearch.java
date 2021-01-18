@@ -21,14 +21,14 @@ public class _01_BinarySearch {
 			int mid = (start + end) / 2;
 			// 4. if the array element at mid is equal to value
 			// then return mid
-			if (array[mid] == value) {
+			if (mid < array.length && array[mid] == value) {
 				return mid;
 			}
 			// 5. if the array element at mid is greater than value
 			// then return the value returned from a call to the
 			// binarySearch method. Pass in start and mid - 1
 			// for the end variable.
-			if (array[mid] > value) {
+			if (mid < array.length && array[mid] > value) {
 				return binarySearch(array, start, mid - 1, value);
 			}
 			// 6. return the value returned from a call to the binarySearch
