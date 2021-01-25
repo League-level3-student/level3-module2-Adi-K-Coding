@@ -59,7 +59,7 @@ public class _00_MoreAndMoreTests {
 	}
 
 	boolean isSquare(int i) {
-		for (int j = 0; j < i; j++) {
+		for (int j = 1; j <= i; j++) {
 			if (i / j == j) {
 				return true;
 			}
@@ -81,8 +81,15 @@ public class _00_MoreAndMoreTests {
 	}
 
 	boolean isCube(int i) {
-		// TODO Auto-generated method stub
+		for (double j = 1; j <= i; j++) {
+			if ( (i / j / j) == j) {
+//				System.out.println( (i / j / j));
+//				System.out.println(j);
+				return true;
+			}
+		}
 		return false;
+
 	}
 
 }
