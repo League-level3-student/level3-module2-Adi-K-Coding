@@ -25,12 +25,44 @@ public class Algorithms {
 	public static double findTallest(List<Double> peeps) {
 		double heightOfTallestPerson = 0;
 		for (int i = 0; i < peeps.size(); i++) {
-			if (peeps.get(i) < peeps.get(i + 1)) {
-				heightOfTallestPerson = peeps.get(i + 1);
-			}else {
-				 heightOfTallestPerson=peeps.get(i);
+			if (peeps.get(i) > heightOfTallestPerson) {
+				heightOfTallestPerson = peeps.get(i);
 			}
 		}
 		return heightOfTallestPerson;
+	}
+
+	public static Object findLongestWord(List<String> words) {
+		String longestWord = "";
+		for (int i = 0; i < words.size(); i++) {
+			if (words.get(i).length() > longestWord.length()) {
+				longestWord = words.get(i);
+			}
+		}
+		return longestWord;
+	}
+
+	public static Object containsSOS(List<String> message1) {
+		for (int i = 0; i < message1.size(); i++) {
+			if (message1.get(i).contains("... --- ...")) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static List<String> sortScores(List<Double> results) {
+		boolean isInOrder = false;
+		while (isInOrder == false) {
+			isInOrder = true;
+			for (int i = 0; i < results.size() - 1; i++) {
+				if (results.get(i + 1) < results.get(i)) {
+					double temp = results.get(i);
+					results.get(i) = results.(i + 1);
+					results.get(i + 1) = temp;
+					isInOrder = false;
+				}
+			}
+		}
 	}
 }
