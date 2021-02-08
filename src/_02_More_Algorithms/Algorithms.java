@@ -51,18 +51,52 @@ public class Algorithms {
 		return false;
 	}
 
-	public static List<String> sortScores(List<Double> results) {
+	public static List<Double> sortScores(List<Double> results) {
 		boolean isInOrder = false;
 		while (isInOrder == false) {
 			isInOrder = true;
 			for (int i = 0; i < results.size() - 1; i++) {
 				if (results.get(i + 1) < results.get(i)) {
 					double temp = results.get(i);
-					results.get(i) = results.(i + 1);
-					results.get(i + 1) = temp;
+					results.set(i, results.get(i + 1));
+					results.set(i + 1, temp);
 					isInOrder = false;
 				}
 			}
 		}
+		return results;
 	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		boolean isInOrder = false;
+		while (isInOrder == false) {
+			isInOrder = true;
+			for (int i = 0; i < unsortedSequences.size() - 1; i++) {
+				if (unsortedSequences.get(i + 1).length() < unsortedSequences.get(i).length()) {
+					String temp = unsortedSequences.get(i);
+					unsortedSequences.set(i, unsortedSequences.get(i + 1));
+					unsortedSequences.set(i + 1, temp);
+					isInOrder = false;
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		boolean isInOrder = false;
+		isInOrder = true;
+		while (isInOrder == false) {
+			for (int i = 0; i < words.size() - 1; i++) {
+				if (words.get(i).compareTo(words.get(i + 1)) > 0) {
+					String temp = words.get(i);
+					words.set(i, words.get(i + 1));
+					words.set(i + 1, temp);
+					isInOrder = false;
+				}
+			}
+		}
+		return words;
+	}
+
 }
