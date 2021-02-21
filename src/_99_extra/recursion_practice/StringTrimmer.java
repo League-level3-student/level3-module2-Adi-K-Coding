@@ -2,6 +2,10 @@ package _99_extra.recursion_practice;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+
+
+
 public class StringTrimmer {
 
 	static public String trimString(String str, int removesLeft) {
@@ -19,7 +23,8 @@ public class StringTrimmer {
 
 	}
 
-	public static void main(String[] args) {
+	@Test 
+	public void testTrim() {
 		assertEquals("Hello W", trimString("Hello World!", 5));
 		assertEquals("League", trimString("LeagueOfAmazing!", 10));
 		assertEquals("James", trimString("JamesTheIntern", 9));
